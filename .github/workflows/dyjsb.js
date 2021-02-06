@@ -34,7 +34,7 @@ jobs:
           npm install
       - name: '运行 【抖音极速版】'
         run: |
-          node dyjsb.js
+          node Task/dyjsb.js
         env:
           SIGNHEADER: ${{ secrets.SIGNHEADER }}
           SIGNCOOKIE: ${{ secrets.SIGNCOOKIE }}

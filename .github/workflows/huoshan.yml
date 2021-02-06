@@ -29,12 +29,12 @@ jobs:
         run: |
           node hs.js
         env:
-          HSURL: ${{ secrets. HSURL }}
-          HSHEADER: ${{ secrets. HSHEADER }}
-          HSBODY: ${{ secrets. HSBODY }}
-          PLAYURL: ${{ secrets. PLAYURL }}
-          PLAYHEADER: ${{ secrets. PLAYHEADER }}
-          PLAYBODY: ${{ secrets. PLAYBODY }}
+          HSURL: ${{ secrets.HSURL }}
+          HSHEADER: ${{ secrets.HSHEADER }}
+          HSBODY: ${{ secrets.HSBODY }}
+          PLAYURL: ${{ secrets.PLAYURL }}
+          PLAYHEADER: ${{ secrets.PLAYHEADER }}
+          PLAYBODY: ${{ secrets.PLAYBODY }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}

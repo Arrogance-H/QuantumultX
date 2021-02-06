@@ -140,7 +140,7 @@ playheaderArr.push($.getdata(`playheader${i}`))
   }
 }
 !(async () => {
-if (!hsheaderArr[0] && !hsbodyArr[0] && !hsurlArr[0]) {
+if (!hsheaderArr[0] /*&& !hsbodyArr[0] && !hsurlArr[0]*/) {
     $.msg($.name, '【提示】请先获取抖音火山版一cookie')
     return;
   }

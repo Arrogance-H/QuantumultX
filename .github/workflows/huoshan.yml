@@ -7,7 +7,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: huoshan
+    types: hs
 jobs:
   build:
 

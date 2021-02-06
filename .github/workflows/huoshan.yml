@@ -27,7 +27,7 @@ jobs:
           npm install
       - name: '运行 【火山】'
         run: |
-          node hs.js
+          node Task/hs.js
         env:
           HSURL: ${{ secrets.HSURL }}
           HSHEADER: ${{ secrets.HSHEADER }}

@@ -146,7 +146,7 @@ if (process.env.PLAYURL && process.env.PLAYURL.indexOf('#') > -1) {
           playurl.push(playurl[item])
         }
     });
-  Object.keys(playhrader).forEach((item) => {
+  Object.keys(playheader).forEach((item) => {
         if (playheader[item]) {
           playheaderArr.push(playheader[item])
         }

@@ -142,7 +142,7 @@ if (process.env.PLAYURL && process.env.PLAYURL.indexOf('#') > -1) {
         }
     });
     Object.keys(playurl).forEach((item) => {
-        if playurl[item]) {
+        if (playurl[item]) {
           playurl.push(playurl[item])
         }
     });

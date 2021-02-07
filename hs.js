@@ -30,7 +30,12 @@ const $ = Env(zhiyi)
 const notify = $.isNode() ?require('./sendNotify') : '';
 let status;
 status = (status = ($.getval("hsstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
-const hsheaderArr = [],hsbodyArr = [],hsurlArr = [],playurlArr = [],playheaderArr = [],playbodyArr = []
+const hsheaderArr = []
+const hsbodyArr = []
+const hsurlArr = []
+const playurlArr = []
+const playheaderArr = []
+const playbodyArr = []
 let playurl = $.getdata('playurl')
 let playheader = $.getdata('playheader')
 let playbody = $.getdata('playbody')
@@ -120,6 +125,39 @@ if (process.env.PLAYURL && process.env.PLAYURL.indexOf('#') > -1) {
   } else {
    playbody = process.env.PLAYBODY.split()
   };
+	
+  Object.keys(hsurl).forEach((item) => {
+        if (hsurl[item]) {
+          hsurlArr.push(hsurl[item])
+        }
+    });
+    Object.keys(hsheader).forEach((item) => {
+        if (hsheader[item]) {
+          hsheaderArr.push(hsheader[item])
+        }
+    });
+     Object.keys(hsbody).forEach((item) => {
+        if (hsbody[item]) {
+          hsbodyArr.push(hsbody[item])
+        }
+    });
+    Object.keys(playurl).forEach((item) => {
+        if playurl[item]) {
+          playurl.push(playurl[item])
+        }
+    });
+  Object.keys(playhrader).forEach((item) => {
+        if (playheader[item]) {
+          playheaderArr.push(playheader[item])
+        }
+    });
+    Object.keys(playbody).forEach((item) => {
+        if (playbody[item]) {
+          playbody.push(playbody[item])
+        }
+    });
+	
+	
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
  } else {
@@ -140,7 +178,7 @@ playheaderArr.push($.getdata(`playheader${i}`))
   }
 }
 !(async () => {
-if (!hsheaderArr[0] /*&& !hsbodyArr[0] && !hsurlArr[0]*/) {
+if (!hsheaderArr[0] && !hsbodyArr[0] && !hsurlArr[0]) {
     $.msg($.name, '【提示】请先获取抖音火山版一cookie')
     return;
   }
